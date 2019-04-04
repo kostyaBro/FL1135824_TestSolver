@@ -534,14 +534,21 @@
     let questionArray = [];
     let answerArray = [];
     let flagAdding = false;
+    // console.log("length ", qAAArr.length);
     for (let i = 0; i < qAAArr.length; i++) {
+        // console.log(i, "'" + qAAArr[i] + "'", "index: " + qAAArr[i].indexOf(':'));
+        if (qAAArr[i].length === 0) {
+            continue
+        }
         if (qAAArr[i].indexOf(':') === -1) {
+            // console.log(i, "'" + qAAArr[i] + "'");
             if ($('*:contains("'+ qAAArr[i] + '")').length > 0 || getCookie('solver_test_name') === qAAArr[i]) {
+                // console.log("flagAdding = true;");
+                flagAdding = true;
                 setCookie('solver_test_name', qAAArr[i], {
                     domain: extractHostname(qAAArr[i+1]),
                     path: '/'
                 });
-                flagAdding = true;
                 continue
             } else {
                 if (flagAdding === true) {
