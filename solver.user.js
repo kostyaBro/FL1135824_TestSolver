@@ -710,7 +710,8 @@
         console.log("%c hostname[0] = '" + hostname + "'", 'color: green');
         setCookie("solver", "run-0", {
             domain: hostname,
-            path: '/'
+            path: '/',
+            expires: 60,
         });
         sleep(1000).then(() => {
             window.location.href = questionArray[0]
@@ -757,7 +758,8 @@
                         } else {
                             setCookie("solver", "go-" + (parseInt(arrCookie[1]) + 1), {
                                 domain: answerHrefHostname,
-                                path: '/'
+                                path: '/',
+                                expires: 60,
                             });
                         }
                         sleep(delay_ms).then(() => {
@@ -772,7 +774,8 @@
             console.log("GO" + arrCookie[1]);
             setCookie("solver", "run-" + (parseInt(arrCookie[1])), {
                 domain: extractHostname(questionArray[parseInt(arrCookie[1])]),
-                path: '/'
+                path: '/',
+                expires: 60
             });
             sleep(delay_ms).then(() => {
                 window.location.href = questionArray[parseInt(arrCookie[1])];
