@@ -10,12 +10,510 @@
 //==/UserScript==
 (function (window, undefined) { // [2] нормализуем window
     // region user vars
-    let questionsAndAnswers = "Helloween                                                                  \n" +
-        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/M2PRAV67UPN3:CBA       \n" +
-        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/ZNH9XOSQO2BC:13        \n" +
-        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/777WLCZNQ324:B         \n" +
-        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/FA2FYXXMY7OY:D         \n" +
-        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/7CG8NTVUGCN7:42        ";
+    let questionsAndAnswers = "Wheel of Reward\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/T69WW :Next\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/VHCLD :Next\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/KOKJL :Next\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/XG605 :Next\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/F1293 :Next\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/PBLS8 :Sleepy Kitty\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/9UPPK :Bald Eagle\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/F7AET :Kermit the Frog\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/K22IV :101 Dalmatians\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/RMJ0L :Africa And India\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/ZZBYB :Dance With Me\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/BQRX9 :French Restaurant\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/V6ADW :Autumn Breeze\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/1I1U4 :Brokeback Mountain\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/TEXHS :Summer Rainbow\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/ENXJ3 :The Butterfly Effect\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/20TWY :The Swan Princess\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/ULUMD :Forest Fire\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/RU4AA :Spirited Away\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/1OKLD :The nJpaasee oesuH\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/GYD76 :hteWi gTrie\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/0K294 :Tears In The Rain\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/PUV7S :Irish Dancer\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/PJS36 :Taek yM naHd\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/Z0A2S :doG fO arW\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/4F6PQ :ntnhoAy psHkoni\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/KSRDF :Loev Is A igLsno eGma\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/L9879 :tltLei vrRei\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/MFV3D :nsecDa tWhi lseWov\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/ESYVS :etWih onsRierhco\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/HK8FC :eTh reaB Ncsssieteei\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/KOQE0 :Some Kind Of cagiM\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/ZSEAC :I Can Almost See You\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/68M6T :ehT emisaRn fO Teh ayD\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/B328W :Spelesels In rliBen\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/DTENG :A Horse With No Name\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/ZWIS9 :Into the Mystic\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/8GTGL :gBi lloYew xiTa\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/N4Q58 :cinDgan nI ehT raDk\n" +
+        "https://gimmemore.com/en/quiz/EJHA8/question/YKZ5C :zzylGir nMa\n" +
+        "\n" +
+        "\n" +
+        "Spelling Bee Quiz\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/GBDBCXETPPPW :whisper\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/ZGPWE3ZIVJ76 :palace\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/Q4NM9UU7RE5M :Hummingbird\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/RX0YZJIFEY2G :A restaurant\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/MTXBDA26ATH6 :Principal\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/VNHI1JNHTJC3 :vegetarian\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/SQT9AUUZXYP3 :referee\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/L15HQSB3LLKD :A village\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/VFODMI2CGCP8 :Python\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/I8JZ5PWZTA36 :Foreign\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/2594TXXVMZB9 :willn't\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/4M9D3KQIB612 :Thief\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/7NLRMAQIUD0U :The Caribbean\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/15C9OYGA552Z :An auction\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/7RGD6SBVZ57G :Receipt\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/CS5C1M0HXJ32 :The teacher had a good effect on the boy's grades\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/T964J62BCLUT :Broccoli\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/ULLI0SBJNP26 :bicycle\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/1MNK5DWK99G1 :playwright\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/631MHVLZGCXQ :any\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/97CMP37R2MB2 :February\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/LTJ0VRJUFU3I :Baguette\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/ZT1W4ZRVA3KP :Temperature\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/IJ6DB3SI92KL :Embarrassed\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/AG2AF :The stars winked at me\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/20H2QR9P2CJ5 :Who's books do these belong to?\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/BJQ4OQ14YK2K :Pomegranate\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/VGJM6965UM6Y :Handkerchief\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/QLNGI9VQ7HPM :A psychiatrist\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/NGLSCETSF1Q5 :Pharaoh\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/C96NXKOVG335 :Prosciutto\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/0LOVF :My love is like a red rose\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/DLEQNED6GNE1 :You can't save money by spending it\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/JXHKTNSWB95V :Prejudice\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/HKPXN0QYZPI2 :Pterodactyl\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/LYIOZCM72VMX :Otorhinolaryngologist\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/DMGJBYIIDYAB :Archaeologist\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/CF6ILFJVAK61 :There's less apples in the garden today.\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/9U03OF8SQSXE :Okay, who do you agree with?\n" +
+        "https://gimmemore.com/en/quiz/C5S02/question/WPKJFOLNXH0R :Axolotl\n" +
+        "\n" +
+        "Color & Vision Test\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/S5QCD :74\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/EG0NR :B\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/IVV5M :C\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/5DDMI :D\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/18I73 :5\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/EZ316 :C\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/QEN20 :Blue\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/C05KG :A X D C W\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/F41RM :H K J Z F B V E\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/GSX9A :A\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/C1Z7Z :C\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/I98ML :B\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/0BLG2 :D\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/O6256 :D\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/AM8ZI :A\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/74KY0 :A\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/588K5 :D\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/UKK6Y :C\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/3DHGO :A\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/XLP4T :B\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/3CX37 :C\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/M6S5U :They're the same\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/V76KT :B\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/488OA :PECFD\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/PWEPG :EB4SF5\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/J6RI7 :FELOPZD\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/NX6WJ :ETDFPEDL\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/MHBHZ :FOOD\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/B2C56 :A\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/MH4OF :D\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/D0FPC :SKIN\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/N9NIC :HAND\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/XHF7S :EYE\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/7WF8A :HEART\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/2FP8Q :CART\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/8MBFE :JUMP\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/VOXIG :SUNNY\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/3UDZM :STICK\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/YIORN :JAZZ\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/TCQB3 :DUAL\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/T8T83 :E, C, F, D, B, A\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/3WV39 :B\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/ZVUGZ :H E S\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/I7JKU :B\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/ON3K9 :7\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/YS3Z4 :Both are the same size\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/LBN8S :9\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/E5H1H :Bottle, Binoculars, Maple Leaf, Guinea pig\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/XLIB3 :A\n" +
+        "https://intellitest.me/en/knowledge/I91ZO/question/SB6WR :D\n" +
+        "\n" +
+        "\n" +
+        "Gamer Quiz\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/8O9D6 :False\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/RXQ2B :Gordon Freeman\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/GJPYM :Donkey Kong\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/G68D8 :Kratos\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/J2VNV :Metal Gear Solid: Guns of Liberty\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/GTP0Q :Mortal Kombat X\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/0JOV2 :Cat\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/RQU3P :Super Nintendo Entertainment System\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/V990E :Yoko Shimomura\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/VWBTB :The Legend of Zelda: Ocarina of Time\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/PU818 :Team Sonic Racing\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/XG60U :Cristiano Ronaldo\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/9OW3O :Sean Bean\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/GU5HS :PlayStation\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/RISXH :Ellie & Joel\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/9VPU1 :Commander Shepard\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/IOMRV :Civilization\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/056MF :Kingdom Hearts\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/DU2LT :Fallout 76\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/UF5RT :PlayStation 2\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/YJ736 :Escher\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/QXM83 :Shinji Mikami\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/YPKYN :The Elder Scrolls IV: Oblivion\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/78HH2 :Limbo\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/O9LLV :Calamity Ganon\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/YOGEW :A\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/ULVD5 :Gordon Freeman\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/FUZ36 :Red Dead Revolver\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/4R4Y7 :Baldur\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/MBQCY :Super Mario 64\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/EIKY1 :1984\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/YN55O :Pac-Man\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/5Z8P8 :Total War\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/O4ZW8 :Duke Nukem 3D\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/PQLW1 :Gaia\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/I1XK7 :Fallout\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/3WPWI :Atari 2600\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/MKWDK :China\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/VSBTI :Not a Hero\n" +
+        "https://quizdelivery.com/en/quiz/0Y6BO/question/MJUV0 :Focus Home Interactive\n" +
+        "\n" +
+        "\n" +
+        "Pokemon Quiz\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/PB5RP :Pikachu\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/6H94X :Eevee\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/HQBIW :Slowpoke\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/YV4MM :Squirtle\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/SA7IE :Cubone\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/COGVH :Snorlax\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/W8UZC :Charmeleon\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/K3FOS :Poliwrath\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/ZHRDG :Articuno\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/25Q4Y :Nidorino\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/A6LIZ :Caterpie\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/1ECZF :Sandslash\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/7J6O8 :Oddish\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/YJ3R8 :Grimer\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/U3ATC :Mew\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/4HS6P :Piplup\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/1SELU :Ditto\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/K2HW5 :Lillipup\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/2YWW1 :Piplup\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/K6QZA :Ghost\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/4Q0FR :Nidorina\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/8UJS6 :Clefairy\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/ZP22G :Arcanine\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/BS0B8 :Piloswine\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/TQ57S :Delibird\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/6AAK4 :Pupitar\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/QZWH3 :Lairon\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/X8CCF :Plusle\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/K0K21 :Altaria\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/5DCBE :Metagross\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/PSKZ1 :Stunky\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/OVLVE :Hippopotas\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/4MIJK :Simipour\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/TT3RT :Sawk\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/HN8T1 :Zoroark\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/4D8UB :Skiddo\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/V4GM1 :Malamar\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/7O9UD :Tyrunt\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/8GBWC :Cubchoo\n" +
+        "https://gimmemore.com/en/quiz/YPO1I/question/D7D74 :Nosepass\n" +
+        "\n" +
+        "\n" +
+        "Fun Halloween Quiz\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/GO8WE :Enter\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/GREFBJKD8U9P :Pumpkin\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/BE4B18R7INF6 :The scream\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/IXSNTZIWELQD :Monster\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/5SF687CMAXPW :Home Alone\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/XY3GHHBKXEKN :Treat\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/NO56TPCM2IJH :Full moon\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/0844P8WCWAKE :Lunacy\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/UO7YDK36JWYU :Stonehenge\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/3R1GM3IMOH2Q :A Ouija board\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/H80QGIIQX4KC :Grim\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/MIHKG52SVB0X :A Voodoo doll\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/0X9C9LQL4OS8 :Candy Corn\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/GGQ6XNJ3UUHE :A When El Le \n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/0B15CS3GDJ4S :Fog\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/OE41NC39RPA7 :Pagan\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/5NUWG4DTY2G9 :A Jolly Roger\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/DIRKZNH7K1HT :A couldron\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/CLOAGQKITNSP :Corn syrup\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/U0D8DL9ZJZLT :Orlando Bloom\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/7X4IVO3P0H4T :Arthur Conan Doyle\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/N5MNRZG5SBEG :A Christmas Carol\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/MHQ37PJJ51X2 :HIV\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/ZLZO03HMOY4Q :Chimp\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/CPKKW5RXH89L :Funnybones\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/6N5VUVUPBUL7 :Egypt\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/8P740GC42WP9 :Four\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/7XLCC804JL9D :Mary Shelley\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/R7H91C4G465Z :Gashadokura\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/V7SAII36BW5I :Halloween Horror Puzzle\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/HC5V323NT7BB :Expecto-Patronum\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/6CC786OEC64H :The Yeti\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/F2YVN7N69M8V :Dia de Muertos\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/N3R03C9QNIAB :Japan\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/XLP8VP78BPGZ :The Nightmare Before Christmas\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/RC1S46PKA218 :Mephistopheles\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/BBT8WWB8VVZB :No\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/YIL03VB2JNPI :The Troubles\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/79SKE2SY6FAJ :\"I am the clown with the breakaway face\"\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/9POXM9DUA27C :Can increase weight\n" +
+        "\n" +
+        "\n" +
+        "League of Legends Quiz\n" +
+        "https://videoquizstar.com/en/quiz/IM45P/question/E1RMN :Riot Games\n" +
+        "https://videoquizstar.com/en/quiz/IM45P/question/MSWXN :Summoner\n" +
+        "https://videoquizstar.com/en/quiz/IM45P/question/1XZ1V :Crystal Maze\n" +
+        "https://videoquizstar.com/en/quiz/IM45P/question/U4F98 :Defender\n" +
+        "https://videoquizstar.com/en/quiz/IM45P/question/IZ5E7  :Dominion mode\n" +
+        "https://videoquizstar.com/en/quiz/IM45P/question/YCXJY :Defense of the Ancients\n" +
+        "https://videoquizstar.com/en/quiz/IM45P/question/8P9DG :Xin Zhao\n" +
+        "https://videoquizstar.com/en/quiz/IM45P/question/KV7SP :Annie\n" +
+        "https://videoquizstar.com/en/quiz/IM45P/question/5Y9IC :Hallam\n" +
+        "https://videoquizstar.com/en/quiz/IM45P/question/6SV16 :Lulu, Singed, Evelynn, Aurelion Sol\n" +
+        "\n" +
+        "\n" +
+        "Halloween Puzzle Challenge\n" +
+        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/M2PRAV67UPN3 :CBA\n" +
+        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/ZNH9XOSQO2BC :13\n" +
+        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/777WLCZNQ324 :B\n" +
+        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/FA2FYXXMY7OY :D\n" +
+        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/7CG8NTVUGCN7 :42\n" +
+        "\n" +
+        "\n" +
+        "The Ultimate Apex Legends Quiz\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/MUP0A :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/HU5KN :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/0U0IZ :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/QF0JA :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/LB9HG :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/RYUM1 :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/9V3NY :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/7BLNM :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/7PR1Z :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/XLLJX :Yes!\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/C5B85 :A battle royale\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/WG6FC :2019\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/DL4QP :Yes\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/HTWY2 :No\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/KRWQ2 :Yes\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/74RWN :Electronic Arts\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/0H2M6 :Yes\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/4HMP2 :Yes\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/E56LP :Yes\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/26HQ2 :Yes\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/2L601 :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/B1432 :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/A7Y77 :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/GKTYG :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/CYTSB :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/F5XUZ :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/VF4ET :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/3PVEN :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/E3VES :4\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/NX2CD :NEXT\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/M9WDP :Respawn Entertainment\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/U4SED :3\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/D7NSW :8\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/RJMXR :Myrage\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/RG523 :Earthshatter\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/CK933 :Icelandic\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/9DJUL :750\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/YBC2P :8 seconds\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/MGU3L :1,200\n" +
+        "https://gimmemore.com/en/quiz/HXMQG/question/QKG7J :Wraith\n" +
+        "\n" +
+        "\n" +
+        "Easy Maths Quiz\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/2JRAHOPFHHDA :3966\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/699ZLDJUNNZW :6322\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/J62943J79SCV :25000076\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/G29FYXOG7KQZ :3777.2\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/1ZMWLHC0PNCR :180º\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/56WS0BWXSRF6 :5 \n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/AWKDIE8OIPAP :9.2\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/36WJMJ414QWF :-2 (2x + 5)\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/C1SC237HWEEI :10 km/hr\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/C4KJT96FB7FT :2(13x – 7)\n" +
+        "\n" +
+        "\n" +
+        "Flash Quiz\n" +
+        "https://quizriddle.com/en/quiz/TAC4L/question/2MK64 :Alan Rickman\n" +
+        "https://quizriddle.com/en/quiz/TAC4L/question/6MN16 :Homeopathy\n" +
+        "https://quizriddle.com/en/quiz/TAC4L/question/6M90M :Goldeneye\n" +
+        "https://quizriddle.com/en/quiz/TAC4L/question/Q67Z2 :Charlottenberg\n" +
+        "https://quizriddle.com/en/quiz/TAC4L/question/HX8F9 :aamhrpo\n" +
+        "\n" +
+        "\n" +
+        "Prison Escape Game\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/B9PQC :Ready!\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/9660M :15\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/Z5WIW :9 minutes\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/K9D9Y :B\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/75WYH :Confront them/\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/SJZUA :A/\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/1AKP6 :They weight the same\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/YVNLB :A/\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/Y56QQ :Enraged\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/5QB6Y :Blue and Yellow\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/5MP2K :Can of beans\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/M3WET :Mercury\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/J6YLE :Pacific Ocean\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/IHTUK :An extra food token\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/79WBG :132\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/NW0W3 :Brim saw\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/PG6A5 :Metal rod/\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/ARDGE :Normal\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/XLSQZ :A mammal\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/X8AIV :Only\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/DRNMJ :Abyss\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/IGCU8 :3\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/VFVHG :40%\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/S0XE6 :Even\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/PP892 :Country\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/OBBV7 :4\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/OFP1D :Thursday\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/03PED :C\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/P0LVZ :421854\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/02QYG :A/\n" +
+        "Lucky Wheel Quiz\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/6NA90 :Spin Wheel\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/BN3R6 :Australia\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/BSFXL :Madonna\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/1CB46 :Flowers\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/PE2VS :Thanksgiving\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/816RT :Anatomy\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/ZQNCV :London\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/NRHUD :Witches\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/3GBY8 :Lord of the Rings\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/EKGI6 :Citrus\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/SMTPH :Mexico\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/2NNYS :France\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/HJZ6M :Comics\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/5MC4C :Rome\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/AI8BR :Pomegranates\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/TIZ2Q :Types of monkeys\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/JTW1T :In a chess set\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/TMI4G :Both were assassinated\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/2REU7 :Whales\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/7ZGBX :Pliers\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/12SCA :Breeds of horses\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/FKPX1 :Brazil\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/ETOT7 :Mammals\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/KE1D5 :Hospital\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/LNSZF :David Bowie\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/NUWKZ :Winona Ryder\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/38WCN :Pablo Picasso\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/71ZPR :Italy\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/JXDRJ :Metal\n" +
+        "https://video-facts.com/en/knowledge/08UZP/question/4WU97 :Julius Caesar\n" +
+        "The Apex Legends Quiz\n" +
+        "https://gimmemore.com/en/quiz/GHAOA/question/M9WDP :Respawn Entertainment\n" +
+        "https://gimmemore.com/en/quiz/GHAOA/question/U4SED :3\n" +
+        "https://gimmemore.com/en/quiz/GHAOA/question/D7NSW :8\n" +
+        "https://gimmemore.com/en/quiz/GHAOA/question/RJMXR :Myrage\n" +
+        "https://gimmemore.com/en/quiz/GHAOA/question/RG523 :Earthshatter\n" +
+        "https://gimmemore.com/en/quiz/GHAOA/question/CK933 :Icelandic\n" +
+        "https://gimmemore.com/en/quiz/GHAOA/question/9DJUL :750\n" +
+        "https://gimmemore.com/en/quiz/GHAOA/question/YBC2P :8 seconds\n" +
+        "https://gimmemore.com/en/quiz/GHAOA/question/MGU3L :1,200\n" +
+        "https://gimmemore.com/en/quiz/GHAOA/question/QKG7J :Wraith\n" +
+        "The Game of Thrones Quiz\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/PY8IN :Dragonstone\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/2J3KL :Sandor Clegane\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/LP2RB :Euron\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/YA4FJ :Olenna\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/XLRGKF7APS3N :The Starks\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/ADA0VSSJSZFW :Daenerys Targaryen\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/IHHFNCD5942V :Robert Baratheon\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/H5A9RW85SKQM :The Night's Watch\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/OCFU61PYJA4C :King's Landing\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/NUSQZ5BLDART :Five\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/E9WK9GUVVQE2 :Khal Drogo\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/GMXQWWRGGTVQ :Petyr Baelish\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/715AQ18NG4AM :His right hand\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/UK6I5WP2REZS :Robert Baratheon\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/CETP3U7D0OTT :Tyrion Lannister\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/75FLN16GT4XK :Brienne of Tarth\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/QXE7UX7NMX1M :Ghost\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/HQO08WX6X4MH :Dreadfort\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/31OO941ETRO6 :Shireen Baratheon\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/Z2MP33E2A34B :A thousand thousand\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/P5923E11G0K2 :Drunk\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/308UNR2AZG7A :\"When he rode off, where did he go?\"\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/01GFUVYL9X5Y :A Magister of Pentos\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/ZFE4MF8XLM44 :2\n" +
+        "https://gimmemore.com/en/quiz/3UVT3/question/PEY1B :Viserion\n" +
+        "St Patrick's Day Quiz\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/O7E9S :Because it honours the anniversary of St Patrick's death\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/4IZ5K :Singing 'God save the Queen'\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/QOJJ3 :Dublin\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/SGAEC :Belfast\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/ASOV1 :Green, White, Orange\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/88WZA :Hurling\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/BQ2D0 :Gaelic\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/JUWA3 :Fiddle\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/CCYIN :Shamrock\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/AKB06 :The Trinity\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/Q21TC :Wales\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/0J90A :Maewyn\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/9LIVW :Blue\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/85TW3 :Patrick drove the snakes out of Ireland\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/GASXN :The sun\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/MM1B5 :Dodgeball\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/55K54 :Dream / Magic\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/TIAKN :The Chieftains\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/P9R1H :It was used as a St Patrick's Day 'Google Doodle'\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/MX3ZP :500 AD - 1000 AD\n" +
+        "Valentine's Day Quiz\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/5XTRD :Rose\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/YEGKO :14th February\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/SEHFW :Cupid\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/5RKPN :Dove\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/AMX38 :Funny\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/UW8G6 :Taylor Swift\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/32R50 :Roman\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/9K6WM :Yoko Ono and John Lennon\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/EWM8K :Swans\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/183LE :A heart\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/9MG0H :Freya\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/6UMLZ :Agra\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/UP68X :William Shakespeare\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/YVVGB :1\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/3C2IJ :Croatian\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/D8QWD :Louis XV\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/OVW5D :Cary Grant and Audrey Hepburn\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/AI0QR :As you like it\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/T7NMQ :60km an hour\n" +
+        "https://gimmemore.com/en/quiz/PBBYK/question/JUP4E :John\n" +
+        "Coffee Chaos Quiz\n" +
+        "https://video-facts.com/en/quiz/XWITW/question/PHY9W :An espresso\n" +
+        "https://video-facts.com/en/quiz/XWITW/question/785YH :C\n" +
+        "https://video-facts.com/en/quiz/XWITW/question/6XPEO :B\n" +
+        "https://video-facts.com/en/quiz/XWITW/question/UBN18 :D\n" +
+        "https://video-facts.com/en/quiz/XWITW/question/47OE8 :D\n" +
+        "https://video-facts.com/en/quiz/XWITW/question/E9GOT :A\n" +
+        "https://video-facts.com/en/quiz/XWITW/question/9I8HM :B\n" +
+        "https://video-facts.com/en/quiz/XWITW/question/Z63NM :C\n" +
+        "https://video-facts.com/en/quiz/XWITW/question/WMN68 :C\n" +
+        "https://video-facts.com/en/quiz/XWITW/question/662PW :10 years old";
     let delay_ms  = 1000; // задержка между нажатиями(защита от дос)
     // endregion
     // region starting script
