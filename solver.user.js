@@ -56,8 +56,18 @@
                 }
                 break;
             default:
-                console.log("%c too many ':' in " + qAAArr[i], 'color: red');
-                return;
+                if (splitString[0] === "http" || splitString[0] === "https") {
+                    let question = splitString[0]+":";
+                    for (let j = 1; j < splitString.length - 1; j++) {
+                        question += ":" + splitString[j];
+                    }
+                    questionArray.push(question);
+                    answerArray.push(splitString[2].trim());
+                    break;
+                } else {
+                    console.log("%c too many ':' in " + qAAArr[i], 'color: red');
+                    return;
+                }
         }
     }
     // endregion
