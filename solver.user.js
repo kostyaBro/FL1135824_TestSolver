@@ -533,9 +533,24 @@
     let qAAArr = questionsAndAnswers.split('\n');
     let questionArray = [];
     let answerArray = [];
+    let flagAdding = false;
     for (let i = 0; i < qAAArr.length; i++) {
         if (qAAArr[i].indexOf(':') === -1) {
-            continue;
+            if ($('*:contains("'+ qAAArr[i] + '")').length > 0 || getCookie('solver_test_name') === qAAArr[i]) {
+                setCookie('solver_test_name', qAAArr[i], {
+                    domain: extractHostname(qAAArr[i+1]),
+                    path: '/'
+                });
+                flagAdding = true;
+                continue
+            } else {
+                if (flagAdding === true) {
+                    break;
+                }
+            }
+        }
+        if (flagAdding === false) {
+            continue
         }
         let splitString = qAAArr[i].split(':');
         switch (splitString.length) {
@@ -568,9 +583,9 @@
                 }
         }
     }
-    for (let i = 0; i < questionArray.length; i++) {
-        console.log(questionArray[i] + " " + answerArray[i]);
-    }
+    // for (let i = 0; i < questionArray.length; i++) {
+    //     console.log(questionArray[i] + " " + answerArray[i]);
+    // }
     // endregion
     // region log question & answers
     // for (let i = 0; i < questionArray.length; i++) {
@@ -722,6 +737,11 @@
                             answerHrefHostname = extractHostname(answerHref);
                         }
                         if (questionArray.length - 1 === parseInt(arrCookie[1])) {
+                            setCookie('solver_test_name', "0", {
+                                domain: extractHostname(answerHref),
+                                path: '/',
+                                expires: 1
+                            });
                             setCookie("solver", "exit", {
                                 domain: answerHrefHostname,
                                 path: '/',
