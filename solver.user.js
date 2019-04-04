@@ -719,7 +719,7 @@
         }
         if (arrCookie[0] === "run") {
             if (window.location.href.indexOf(questionArray[arrCookie[1]]) === -1) {
-                console.log("%c Bug:708\narrCookie: " + arrCookie + "\narrCookie[1]: " + arrCookie[1] + "\nquestionArray[arrCookie[1]]: " + questionArray[arrCookie[1]] + "\nwindow.location.href: " + window.location.href, 'color: red');
+                console.log("%c Bug:722\narrCookie: " + arrCookie + "\narrCookie[1]: " + arrCookie[1] + "\nquestionArray[arrCookie[1]]: " + questionArray[arrCookie[1]] + "\nwindow.location.href: " + window.location.href, 'color: red');
                 return;
             }
             let isAnswerFound = false;
@@ -771,7 +771,7 @@
                 window.location.href = questionArray[parseInt(arrCookie[1])];
             });
         } else {
-            console.log("%c Bug:755 ", "color: red");
+            console.log("%c Bug:774 ", "color: red");
         }
     }
     // endregion
