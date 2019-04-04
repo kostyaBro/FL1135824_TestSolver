@@ -1,25 +1,21 @@
-// ==UserScript==
-// @name         Test solver
-// @namespace    solver
-// @version      0.1
-// @description  This is a user script for solve tests.
-// @author       kostyaBro
-// @match        https://gimmemore.com
-// @include      https://gimmemore.com
-// @grant        none
-// ==/UserScript==
+//==UserScript==
+//@name         Test solver
+//@namespace    solver
+//@version      0.1
+//@description  This is a user script for solve tests.
+//@author       kostyaBro
+//@match        https://gimmemore.com
+//@include      https://gimmemore.com
+//@grant        none
+//==/UserScript==
 (function (window, undefined) { // [2] нормализуем window
     // region user vars
-    let questions = "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/M2PRAV67UPN3\n" +
-        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/ZNH9XOSQO2BC\n" +
-        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/777WLCZNQ324\n" +
-        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/FA2FYXXMY7OY\n" +
-        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/7CG8NTVUGCN7";
-    let answers   = "CBA \n" +
-        "13  \n" +
-        "B   \n" +
-        "D   \n" +
-        "42  ";
+    let questionsAndAnswers = "Helloween                                                                  \n" +
+        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/M2PRAV67UPN3:CBA       \n" +
+        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/ZNH9XOSQO2BC:13        \n" +
+        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/777WLCZNQ324:B         \n" +
+        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/FA2FYXXMY7OY:D         \n" +
+        "https://gimmemore.com/en/quiz/9KGI1YFD7OUJ/question/7CG8NTVUGCN7:42        ";
     let delay_ms  = 1000; // задержка между нажатиями(защита от дос)
     // endregion
     // region starting script
@@ -35,57 +31,35 @@
         return;
     }
     // endregion
-    // region cleaning answers
-    for (;;) {
-        if (answers.indexOf('\n') === -1) {
-            break;
-        } else {
-            answers = answers.replace('\n', ' ');
-        }
-    }
-    for (;;) {
-        if (answers.indexOf('\t') === -1) {
-            break;
-        } else {
-            answers = answers.replace('\t', ' ');
-        }
-    }
-    for (;;) {
-        if (answers.indexOf('  ') === -1) {
-            break;
-        } else {
-            answers = answers.replace('  ', ' ');
-        }
-    }
-    answers = answers.trim();
-    // endregion
-    // region cleaning questions
-    for (;;) {
-        if (questions.indexOf('\n') === -1) {
-            break;
-        } else {
-            questions = questions.replace('\n', ' ');
-        }
-    }
-    for (;;) {
-        if (questions.indexOf('\t') === -1) {
-            break;
-        } else {
-            questions = questions.replace('\t', ' ');
-        }
-    }
-    for (;;) {
-        if (questions.indexOf('  ') === -1) {
-            break;
-        } else {
-            questions = questions.replace('  ', ' ');
-        }
-    }
-    questions = questions.trim();
-    // endregion
     // region creating arrays of questions & answers
-    let questionArray = questions.split(' ');
-    let answerArray   = answers.split(' ');
+    let qAAArr = questionsAndAnswers.split('\n');
+    let questionArray = [];
+    let answerArray = [];
+    for (let i = 0; i < qAAArr.length; i++) {
+        if (qAAArr[i].indexOf(':') === -1) {
+            continue;
+        }
+        let splitString = qAAArr[i].split(':');
+        switch (splitString.length) {
+            case 2:
+                questionArray.push(splitString[0].trim());
+                answerArray.push(splitString[1].trim());
+                break;
+            case 3:
+                if (splitString[0] === "http" || splitString[0] === "https") {
+                    questionArray.push(splitString[0]+":"+splitString[1].trim());
+                    answerArray.push(splitString[2].trim());
+                    break;
+                } else {
+                    console.log("%c too many ':' in " + qAAArr[i], 'color: red');
+                    return;
+                }
+                break;
+            default:
+                console.log("%c too many ':' in " + qAAArr[i], 'color: red');
+                return;
+        }
+    }
     // endregion
     // region log question & answers
     // for (let i = 0; i < questionArray.length; i++) {
