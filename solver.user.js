@@ -568,6 +568,9 @@
                 }
         }
     }
+    for (let i = 0; i < questionArray.length; i++) {
+        console.log(questionArray[i] + " " + answerArray[i]);
+    }
     // endregion
     // region log question & answers
     // for (let i = 0; i < questionArray.length; i++) {
@@ -701,14 +704,14 @@
         }
         if (arrCookie[0] === "run") {
             if (window.location.href.indexOf(questionArray[arrCookie[1]]) === -1) {
-                console.log("%c Bug:215\narrCookie: " + arrCookie + "\narrCookie[1]: " + arrCookie[1] + "\nquestionArray[arrCookie[1]]: " + questionArray[arrCookie[1]] + "\nwindow.location.href: " + window.location.href, 'color: red');
+                console.log("%c Bug:708\narrCookie: " + arrCookie + "\narrCookie[1]: " + arrCookie[1] + "\nquestionArray[arrCookie[1]]: " + questionArray[arrCookie[1]] + "\nwindow.location.href: " + window.location.href, 'color: red');
                 return;
             }
             let isAnswerFound = false;
             $('ul.section.mb-20.game-answers.items-visible-by-delay > li')
                 .each(function(){
                     let answer = $.trim($(this).find('a').text());
-                    if (answer === answerArray[arrCookie[1]]) {
+                    if (answer === answerArray[arrCookie[1]] || answer === answerArray[arrCookie[1]].replace("'", "’")) {
                         console.log("%c questionLink: " + questionArray[arrCookie[1]] + " answer: " + answer, 'color: green');
                         isAnswerFound = true;
                         let answerHref = $(this).find('a').attr('href');
@@ -748,7 +751,7 @@
                 window.location.href = questionArray[parseInt(arrCookie[1])];
             });
         } else {
-            console.log("%c Bug:263 ", "color: red");
+            console.log("%c Bug:755 ", "color: red");
         }
     }
     // endregion
