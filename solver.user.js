@@ -53,7 +53,7 @@
         "https://gimmemore.com/en/quiz/EJHA8/question/YKZ5C :zzylGir nMa\n" +
         "\n" +
         "\n" +
-        "Spelling Bee Quiz\n" +
+        "Spelling Bee Challenge\n" +
         "https://gimmemore.com/en/quiz/C5S02/question/GBDBCXETPPPW :whisper\n" +
         "https://gimmemore.com/en/quiz/C5S02/question/ZGPWE3ZIVJ76 :palace\n" +
         "https://gimmemore.com/en/quiz/C5S02/question/Q4NM9UU7RE5M :Hummingbird\n" +
