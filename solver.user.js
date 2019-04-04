@@ -738,7 +738,7 @@
                         }
                         if (questionArray.length - 1 === parseInt(arrCookie[1])) {
                             setCookie('solver_test_name', "0", {
-                                domain: extractHostname(answerHref),
+                                domain: answerHrefHostname,
                                 path: '/',
                                 expires: 1
                             });
