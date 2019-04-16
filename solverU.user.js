@@ -8,7 +8,7 @@
 //@include      https://gimmemore.com
 //@grant        none
 //==/UserScript==
-(function (window, undefined) { // [2] нормализуем window
+(function (window, undefined) { // [2] РЅРѕСЂРјР°Р»РёР·СѓРµРј window
     // region user vars
     let questionsAndAnswers = "Wheel of Reward\n" +
         "https://gimmemore.com/en/quiz/EJHA8/question/T69WW :Next\n" +
@@ -148,7 +148,7 @@
         "https://intellitest.me/en/knowledge/I91ZO/question/SB6WR :D\n" +
         "\n" +
         "\n" +
-        "Gamer Quiz\n" +
+        "How Much Of A Gamer Are You?\n" +
         "https://quizdelivery.com/en/quiz/0Y6BO/question/8O9D6 :False\n" +
         "https://quizdelivery.com/en/quiz/0Y6BO/question/RXQ2B :Gordon Freeman\n" +
         "https://quizdelivery.com/en/quiz/0Y6BO/question/GJPYM :Donkey Kong\n" +
@@ -191,7 +191,7 @@
         "https://quizdelivery.com/en/quiz/0Y6BO/question/MJUV0 :Focus Home Interactive\n" +
         "\n" +
         "\n" +
-        "Pokemon Quiz\n" +
+        "Who's That PokГ©mon?\n" +
         "https://gimmemore.com/en/quiz/YPO1I/question/PB5RP :Pikachu\n" +
         "https://gimmemore.com/en/quiz/YPO1I/question/6H94X :Eevee\n" +
         "https://gimmemore.com/en/quiz/YPO1I/question/HQBIW :Slowpoke\n" +
@@ -273,7 +273,7 @@
         "https://gimmemore.com/en/quiz/0ULOY/question/RC1S46PKA218 :Mephistopheles\n" +
         "https://gimmemore.com/en/quiz/0ULOY/question/BBT8WWB8VVZB :No\n" +
         "https://gimmemore.com/en/quiz/0ULOY/question/YIL03VB2JNPI :The Troubles\n" +
-        "https://gimmemore.com/en/quiz/0ULOY/question/79SKE2SY6FAJ :\"I am the clown with the breakaway face\"\n" +
+        "https://gimmemore.com/en/quiz/0ULOY/question/79SKE2SY6FAJ :вЂњI am the clown with the breakaway faceвЂќ\n" +
         "https://gimmemore.com/en/quiz/0ULOY/question/9POXM9DUA27C :Can increase weight\n" +
         "\n" +
         "\n" +
@@ -341,17 +341,17 @@
         "https://gimmemore.com/en/quiz/HXMQG/question/QKG7J :Wraith\n" +
         "\n" +
         "\n" +
-        "Easy Maths Quiz\n" +
+        "Maths Quiz\n" +
         "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/2JRAHOPFHHDA :3966\n" +
         "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/699ZLDJUNNZW :6322\n" +
         "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/J62943J79SCV :25000076\n" +
         "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/G29FYXOG7KQZ :3777.2\n" +
-        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/1ZMWLHC0PNCR :180º\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/1ZMWLHC0PNCR :180Вє\n" +
         "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/56WS0BWXSRF6 :5 \n" +
         "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/AWKDIE8OIPAP :9.2\n" +
         "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/36WJMJ414QWF :-2 (2x + 5)\n" +
         "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/C1SC237HWEEI :10 km/hr\n" +
-        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/C4KJT96FB7FT :2(13x – 7)\n" +
+        "https://videoquizhero.com/en/quiz/G8KBO0C4H886/question/C4KJT96FB7FT :2(13x вЂ“ 7)\n" +
         "\n" +
         "\n" +
         "Flash Quiz\n" +
@@ -367,10 +367,10 @@
         "https://videoquizstar.com/en/quiz/ULF1I/question/9660M :15\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/Z5WIW :9 minutes\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/K9D9Y :B\n" +
-        "https://videoquizstar.com/en/quiz/ULF1I/question/75WYH :Confront them/\n" +
-        "https://videoquizstar.com/en/quiz/ULF1I/question/SJZUA :A/\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/75WYH :Confront them\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/SJZUA :A\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/1AKP6 :They weight the same\n" +
-        "https://videoquizstar.com/en/quiz/ULF1I/question/YVNLB :A/\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/YVNLB :A\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/Y56QQ :Enraged\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/5QB6Y :Blue and Yellow\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/5MP2K :Can of beans\n" +
@@ -379,7 +379,7 @@
         "https://videoquizstar.com/en/quiz/ULF1I/question/IHTUK :An extra food token\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/79WBG :132\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/NW0W3 :Brim saw\n" +
-        "https://videoquizstar.com/en/quiz/ULF1I/question/PG6A5 :Metal rod/\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/PG6A5 :Metal rod\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/ARDGE :Normal\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/XLSQZ :A mammal\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/X8AIV :Only\n" +
@@ -392,8 +392,8 @@
         "https://videoquizstar.com/en/quiz/ULF1I/question/OFP1D :Thursday\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/03PED :C\n" +
         "https://videoquizstar.com/en/quiz/ULF1I/question/P0LVZ :421854\n" +
-        "https://videoquizstar.com/en/quiz/ULF1I/question/02QYG :A/\n" +
-        "Lucky Wheel Quiz\n" +
+        "https://videoquizstar.com/en/quiz/ULF1I/question/02QYG :A\n" +
+        "Lucky Wheel\n" +
         "https://video-facts.com/en/knowledge/08UZP/question/6NA90 :Spin Wheel\n" +
         "https://video-facts.com/en/knowledge/08UZP/question/BN3R6 :Australia\n" +
         "https://video-facts.com/en/knowledge/08UZP/question/BSFXL :Madonna\n" +
@@ -463,7 +463,7 @@
         "https://gimmemore.com/en/quiz/3UVT3/question/PEY1B :Viserion\n" +
         "St Patrick's Day Quiz\n" +
         "https://videoquizhero.com/en/quiz/I6PMH/question/O7E9S :Because it honours the anniversary of St Patrick's death\n" +
-        "https://videoquizhero.com/en/quiz/I6PMH/question/4IZ5K :Singing 'God save the Queen'\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/4IZ5K :Singing вЂGod save the QueenвЂ™\n" +
         "https://videoquizhero.com/en/quiz/I6PMH/question/QOJJ3 :Dublin\n" +
         "https://videoquizhero.com/en/quiz/I6PMH/question/SGAEC :Belfast\n" +
         "https://videoquizhero.com/en/quiz/I6PMH/question/ASOV1 :Green, White, Orange\n" +
@@ -480,7 +480,7 @@
         "https://videoquizhero.com/en/quiz/I6PMH/question/MM1B5 :Dodgeball\n" +
         "https://videoquizhero.com/en/quiz/I6PMH/question/55K54 :Dream / Magic\n" +
         "https://videoquizhero.com/en/quiz/I6PMH/question/TIAKN :The Chieftains\n" +
-        "https://videoquizhero.com/en/quiz/I6PMH/question/P9R1H :It was used as a St Patrick's Day 'Google Doodle'\n" +
+        "https://videoquizhero.com/en/quiz/I6PMH/question/P9R1H :It was used as a St PatrickвЂ™s Day вЂGoogle DoodleвЂ™\n" +
         "https://videoquizhero.com/en/quiz/I6PMH/question/MX3ZP :500 AD - 1000 AD\n" +
         "Valentine's Day Quiz\n" +
         "https://gimmemore.com/en/quiz/PBBYK/question/5XTRD :Rose\n" +
@@ -514,7 +514,7 @@
         "https://video-facts.com/en/quiz/XWITW/question/Z63NM :C\n" +
         "https://video-facts.com/en/quiz/XWITW/question/WMN68 :C\n" +
         "https://video-facts.com/en/quiz/XWITW/question/662PW :10 years old";
-    let delay_ms  = 1000; // задержка между нажатиями(защита от дос)
+    let delay_ms  = 1000; // Р·Р°РґРµСЂР¶РєР° РјРµР¶РґСѓ РЅР°Р¶Р°С‚РёСЏРјРё(Р·Р°С‰РёС‚Р° РѕС‚ РґРѕСЃ)
     // endregion
     // region starting script
     let w;
@@ -534,16 +534,16 @@
     let questionArray = [];
     let answerArray = [];
     let flagAdding = false;
-    console.log("length ", qAAArr.length);
+    // console.log("length ", qAAArr.length);
     for (let i = 0; i < qAAArr.length; i++) {
-        console.log(i, "'" + qAAArr[i] + "'", "index: " + qAAArr[i].indexOf(':'));
+        // console.log(i, "'" + qAAArr[i] + "'", "index: " + qAAArr[i].indexOf(':'));
         if (qAAArr[i].length === 0) {
             continue
         }
         if (qAAArr[i].indexOf(':') === -1) {
-            console.log(i, "'" + qAAArr[i] + "'");
+            // console.log(i, "'" + qAAArr[i] + "'");
             if ($('*:contains("'+ qAAArr[i] + '")').length > 0 || getCookie('solver_test_name') === qAAArr[i]) {
-                console.log("flagAdding = true;");
+                // console.log("flagAdding = true;");
                 flagAdding = true;
                 setCookie('solver_test_name', qAAArr[i], {
                     domain: extractHostname(qAAArr[i+1]),
@@ -577,22 +577,35 @@
                 break;
             default:
                 if (splitString[0] === "http" || splitString[0] === "https") {
-                    let question = splitString[0]+":";
-                    for (let j = 1; j < splitString.length - 1; j++) {
-                        question += ":" + splitString[j];
+                    questionArray.push(splitString[0]+":"+splitString[1].trim());
+                    let answer = splitString[2].trim();
+                    for (let j = 3; j < splitString.length; j++) {
+                        answer += ":" + splitString[j];
                     }
-                    questionArray.push(question);
-                    answerArray.push(splitString[2].trim());
+                    answerArray.push(answer);
                     break;
                 } else {
                     console.log("%c too many ':' in " + qAAArr[i], 'color: red');
                     return;
                 }
+
+                // if (splitString[0] === "http" || splitString[0] === "https") {
+                //     let question = splitString[0]+":";
+                //     for (let j = 1; j < splitString.length - 1; j++) {
+                //         question += ":" + splitString[j];
+                //     }
+                //     questionArray.push(question);
+                //     answerArray.push(splitString[2].trim());
+                //     break;
+                // } else {
+                //     console.log("%c too many ':' in " + qAAArr[i], 'color: red');
+                //     return;
+                // }
         }
     }
-    // for (let i = 0; i < questionArray.length; i++) {
-    //     console.log(questionArray[i] + " " + answerArray[i]);
-    // }
+    for (let i = 0; i < questionArray.length; i++) {
+        console.log(questionArray[i] + " " + answerArray[i]);
+    }
     // endregion
     // region log question & answers
     // for (let i = 0; i < questionArray.length; i++) {
@@ -608,10 +621,10 @@
         return;
     }
     if (questionArray.length !== answerArray.length) {
-        console.log('%c Колличество вопросов не равно колличеству ответов', 'color: red');
+        console.log('%c РљРѕР»Р»РёС‡РµСЃС‚РІРѕ РІРѕРїСЂРѕСЃРѕРІ РЅРµ СЂР°РІРЅРѕ РєРѕР»Р»РёС‡РµСЃС‚РІСѓ РѕС‚РІРµС‚РѕРІ', 'color: red');
         return;
     } else {
-        // console.log('%cВсе гуд, можно начинать', 'color: green');
+        // console.log('%cР’СЃРµ РіСѓРґ, РјРѕР¶РЅРѕ РЅР°С‡РёРЅР°С‚СЊ', 'color: green');
     }
     // endregion
     // region extract hostname func
@@ -734,7 +747,7 @@
             $('ul.section.mb-20.game-answers.items-visible-by-delay > li')
                 .each(function(){
                     let answer = $.trim($(this).find('a').text());
-                    if (answer === answerArray[arrCookie[1]] || answer === answerArray[arrCookie[1]].replace("'", "’")) {
+                    if (answer === answerArray[arrCookie[1]] || answer === answerArray[arrCookie[1]].replace("'", "вЂ™")) {
                         console.log("%c questionLink: " + questionArray[arrCookie[1]] + " answer: " + answer, 'color: green');
                         isAnswerFound = true;
                         let answerHref = $(this).find('a').attr('href');
